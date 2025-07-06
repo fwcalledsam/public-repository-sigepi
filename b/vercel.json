@@ -15,7 +15,7 @@
                     "config.py",
                     "image_service.py"
                 ],
-                "installCommand": "pip install -r requirements.txt --ignore-installed"
+                "installCommand": "pip install -r requirements.txt --no-cache-dir"
             }
         }
     ],

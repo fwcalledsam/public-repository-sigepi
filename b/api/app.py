@@ -1,39 +1,35 @@
-from flask import Flask, jsonify
-import os
+from flask import Flask
 from models import db
 from routes import api
+import os
 
 
 def create_app():
     app = Flask(__name__)
 
-    # Configuración mejorada
+    # Configuración esencial
     app.config.from_object("config.Config")
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    app.config["UPLOAD_FOLDER"] = "/tmp/uploads"
-    app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024  # 16MB max upload
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+        "pool_pre_ping": True,
+        "pool_recycle": 300,
+    }
 
     # Inicialización de la base de datos
     db.init_app(app)
 
-    # Crear carpeta de uploads si no existe
-    try:
-        os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
-    except Exception as e:
-        print(f"Error creating upload folder: {e}")
+    # Configuración de uploads
+    app.config["UPLOAD_FOLDER"] = "/tmp/uploads"
+    os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
 
     # Registrar blueprints
     app.register_blueprint(api)
 
-    # Manejo de errores genérico
-    @app.errorhandler(500)
-    def internal_error(error):
-        return jsonify({"error": "Internal server error"}), 500
+    # Ruta de health check
+    @app.route("/health")
+    def health():
+        return {"status": "ok"}
 
     return app
 
 
 app = create_app()
-
-if __name__ == "__main__":
-    app.run(debug=True)
