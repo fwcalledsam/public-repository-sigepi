@@ -1,17 +1,16 @@
 from app import app
-from flask import request, Response
+from flask import Response
 import json
 
 
-def handler(event, context):
+def handler(event, _):
     with app.app_context():
-        # Convertir el evento de Vercel a una solicitud de Flask
-        path = event["path"]
+        # Convertir el evento de Vercel a una solicitud WSGI
         method = event["httpMethod"]
+        path = event["path"]
         headers = event.get("headers", {})
-        body = event.get("body", "{}") if event.get("body") else "{}"
+        body = event.get("body", "{}")
 
-        # Crear entorno WSGI
         environ = {
             "REQUEST_METHOD": method,
             "PATH_INFO": path,
@@ -29,12 +28,12 @@ def handler(event, context):
             **{"HTTP_" + k.upper().replace("-", "_"): v for k, v in headers.items()},
         }
 
-        # Ejecutar la aplicación
-        response = Response.from_app(app, environ)
+        # Ejecutar la aplicación Flask
+        response = app(environ, lambda status, headers: None)
 
         # Convertir la respuesta al formato que espera Vercel
         return {
             "statusCode": response.status_code,
             "headers": dict(response.headers),
-            "body": response.get_data(as_text=True),
+            "body": response[0].decode("utf-8") if response else "",
         }

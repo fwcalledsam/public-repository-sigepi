@@ -7,12 +7,15 @@
             "config": {
                 "maxLambdaSize": "15mb",
                 "runtime": "python3.9",
-                "installCommand": "pip install -r requirements.txt --ignore-installed"
+                "includeFiles": [
+                    "api/*",
+                    "models.py",
+                    "routes.py",
+                    "services.py",
+                    "config.py",
+                    "image_service.py"
+                ]
             }
-        },
-        {
-            "src": "uploads/*",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
