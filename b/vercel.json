@@ -5,16 +5,17 @@
             "src": "api/vercel_handler.py",
             "use": "@vercel/python",
             "config": {
-                "maxLambdaSize": "15mb",
+                "maxLambdaSize": "25mb",
                 "runtime": "python3.9",
                 "includeFiles": [
-                    "api/*",
+                    "api/*.py",
                     "models.py",
                     "routes.py",
                     "services.py",
                     "config.py",
                     "image_service.py"
-                ]
+                ],
+                "installCommand": "pip install -r requirements.txt --ignore-installed"
             }
         }
     ],
