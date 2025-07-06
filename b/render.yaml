@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: flask-api
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn run:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 2.3.2
