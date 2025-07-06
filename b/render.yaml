@@ -6,4 +6,6 @@ services:
     startCommand: "/opt/render/.local/bin/gunicorn --bind 0.0.0.0:$PORT run:app"
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0  # Usa la misma versión que en tu Dockerfile
+        value: 3.11.0
+      - key: UPLOAD_FOLDER
+        value: "/var/data/uploads"  # Cambia esto según sea necesario
