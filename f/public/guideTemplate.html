@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC30lEQVR4AXVTU3QkURSctW3btm3btm3bNmNrbNtmbNvGvpuzcfLR/VRV15iysrIaX25RUauHGvnjuWQf8QAvh3D0hc4n+wqf6ZV3i0pKmtTG1xFgxUQu6+X+N+aSXPj+l8106ofVePqCTPCli8uvJFNq8vh6BUpKSzFhWRmDYc0uKmy7hUMhrGEQKGGZGYNT8/M7r2MSKStoOE5mYUHb6thKgbdGzbUWDl/zb6kkb+aQvKUTsW7GD2bdtfsa2bP3Ju3VmyrJuxU0PGu0n6vtqkL0CbDAKReIzcnu1cbxe9YHBFxCxXLWMomMwpLi5rt5dM9VDAJjDbJ+SsL9BRYPC1luSMTyyqC+BRzgYuAAMecXF7dAwN/HRBz7rxbDhb18uqcoPmauPiVpwn4+w/2JTvH4jIT787SU9xtCAQ5wMctpOOYJMffP/wq0nor30KGMP0Cg9hWJKigpbvZcr7o/GeeuAwzcIc5v4GJG+LrYUJyXdnCovqckvD+LqViBOD52bu1sm1OTx80mestRnt7OJnnL3qGQgYtZRMEKtrAp2P4e9pEX5YKvzkG2w9eV4re1BT6ZdRdeGNT3HmrlTzo4/0zfxCYTFlL8BOVuJ+bldjsm5vxBsZ+XxMfO3stneECcFWRooB1cGhZyQowI2biKjqcDB7iVffDGqLnRESmflfJ+zCB4qdgxkStQM31BZXuPvDo0j+wjRW+/+nnYx9xWS1/W6AOU4ftQNgR+B3v7AMvRPh52MX5hwdu9QgN3D/V2DEVdedouwHwCldJhJ5fm/USnvF8p4BhoPdzM7kshNix4a0U7HxGxnV6iMr02am6iuJ9+tRrOwRs2PHgrYIFTo5UvK4Tvm9l/KUTd9yQ4I334Di7VcxrBUzUZ76HdwCIRlInxM+ENMJfRnNQIoULkr7/5GBqaFPjGYV1N2YWFbeGbgHU3VdwDBrANTmNqfl7nHzbjachDxR3s4Q7eauP/AWKdryFjiMxNAAAAAElFTkSuQmCC" />
+
+    <title>Guía de Uso - Plantilla Carga Masiva de Datos</title>
+    <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+</head>
+
+<body class="bg-gray-50">
+    <div class="container mx-auto max-w-4xl p-6">
+        <div class="bg-white rounded-xl shadow-md p-8">
+            <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Guía de Uso para la Plantilla de Carga Masiva
+                de Datos</h1>
+
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded-r">
+                <p class="text-yellow-800">Esta plantilla Excel está diseñada para cargar información estructurada sobre
+                    proyectos de investigación, sus participantes y roles. Siga cuidadosamente esta guía para asegurar
+                    una carga correcta de los datos.</p>
+            </div>
+
+            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-500 pb-2 mt-8 mb-4">Estructura de la
+                Plantilla</h2>
+            <p class="mb-4 text-gray-700">La plantilla contiene las siguientes hojas (pestañas):</p>
+            <ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700">
+                <li><strong class="font-medium">roles</strong>: Catálogo de roles posibles</li>
+                <li><strong class="font-medium">persons</strong>: Listado de personas</li>
+                <li><strong class="font-medium">stakeholders</strong>: Asignación de roles a personas</li>
+                <li><strong class="font-medium">levels</strong>: Niveles académicos/profesionales</li>
+                <li><strong class="font-medium">projects</strong>: Información de proyectos</li>
+                <li><strong class="font-medium">project_stakeholders</strong>: Relación entre proyectos y participantes
+                </li>
+            </ul>
+
+            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-500 pb-2 mt-8 mb-4">Instrucciones por
+                Hoja</h2>
+            <!-- ROLES -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">1. Hoja "roles"</h3>
+                <p class="mb-3 text-gray-700">Contiene los posibles roles que pueden tener los participantes en los
+                    proyectos.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">role_id</td>
+                                <td class="px-4 py-2">Identificador único numérico del rol</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">role_description</td>
+                                <td class="px-4 py-2">Nombre del rol</td>
+                                <td class="px-4 py-2">Director, Codirector, Estudiante...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4 rounded-r">
+                    <p class="text-yellow-800"><strong>Nota:</strong> No modifique los IDs existentes. Los IDs se usan
+                        para conectar la informacion<br><br> Si necesita
+                        agregar nuevos roles, sobreescriba la informacion o use el siguiente número disponible en la
+                        secuencia.</p>
+                </div>
+            </div>
+            <!-- PERSONAS -->
+            <!-- PERSONAS -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">2. Hoja "persons"</h3>
+                <p class="mb-3 text-gray-700">Listado de todas las personas que participan en proyectos.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_id</td>
+                                <td class="px-4 py-2">Identificador único numérico de la persona</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_firstname</td>
+                                <td class="px-4 py-2">Nombre(s) de la persona</td>
+                                <td class="px-4 py-2">Juan Samuel, Yuridia Guadalupe...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_lastname</td>
+                                <td class="px-4 py-2">Apellido(s) de la persona</td>
+                                <td class="px-4 py-2">Pérez González, Montelongo Padilla...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_location</td>
+                                <td class="px-4 py-2">Ubicación o dirección de la persona (opcional)</td>
+                                <td class="px-4 py-2">Ciudad de México, Guadalajara...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_urlsite</td>
+                                <td class="px-4 py-2">URL de sitio web personal o profesional (opcional)</td>
+                                <td class="px-4 py-2">https://ejemplo.com, https://linkedin.com/in/usuario...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4 rounded-r">
+                    <p class="text-yellow-800"><strong>Nota:</strong> Los campos person_firstname y person_lastname son
+                        obligatorios. Los campos person_location y person_urlsite son opcionales, si no se inserta
+                        informacion la persona externa verá una location placeholder y un link default que redirige al
+                        directorio de investigacion de la unidad Tamaulipas.</p>
+                </div>
+            </div>
+            <!-- STAKEHOLDERS -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">3. Hoja "stakeholders"</h3>
+                <p class="mb-3 text-gray-700">Relaciona personas con sus roles (una persona puede tener múltiples
+                    roles).</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">stakeholder_id</td>
+                                <td class="px-4 py-2">Identificador único de la relación</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">person_id</td>
+                                <td class="px-4 py-2">ID de la persona (referencia a persons)</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">role_id</td>
+                                <td class="px-4 py-2">ID del rol (referencia a roles)</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-4 rounded-r">
+                    <p class="text-red-800"><strong>Importante:</strong> Los IDs de person_id y role_id deben existir en
+                        sus respectivas hojas.</p>
+                </div>
+            </div>
+            <!-- NIVELES DE PROYECTO -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">4. Hoja "levels"</h3>
+                <p class="mb-3 text-gray-700">Catálogo de niveles académicos o profesionales.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">level_id</td>
+                                <td class="px-4 py-2">Identificador único del nivel</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">level_description</td>
+                                <td class="px-4 py-2">Nombre del nivel</td>
+                                <td class="px-4 py-2">Licenciatura, Maestría, Doctorado...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- PROYECTOS -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">5. Hoja "projects"</h3>
+                <p class="mb-3 text-gray-700">Información detallada de cada proyecto.</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_id</td>
+                                <td class="px-4 py-2">Identificador único del proyecto</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_name</td>
+                                <td class="px-4 py-2">Nombre del proyecto</td>
+                                <td class="px-4 py-2">Modelo de apoyo al diagnóstico...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_description</td>
+                                <td class="px-4 py-2">Descripción detallada del proyecto</td>
+                                <td class="px-4 py-2">En este trabajo se desarrolló...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_keywords</td>
+                                <td class="px-4 py-2">Palabras clave separadas por comas</td>
+                                <td class="px-4 py-2">medicina, corazon, examenes</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_agno</td>
+                                <td class="px-4 py-2">Año del proyecto</td>
+                                <td class="px-4 py-2 font-mono">2024, 2021, 2025...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">level_id</td>
+                                <td class="px-4 py-2">ID del nivel (referencia a levels)</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_image_path</td>
+                                <td class="px-4 py-2">Ruta de la imagen asociada</td>
+                                <td class="px-4 py-2 font-mono">...</td>
+                            </tr>
+                        </tbody>
+                        <!-- (este campo se debe quedar vacio) -->
+                    </table>
+                    <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-4 rounded-r">
+                        <p class="text-red-800"><strong>Importante:</strong> No elimine la columna "project_image_path".
+                            El campo
+                            "project_image_path" debe quedar
+                            vacio, la imagen se asigna directamente en el sistema.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- RELACION PROYECTOS - STAKEHOLDERS -->
+            <div class="mb-8">
+                <h3 class="text-xl font-medium text-blue-500 mb-3">6. Hoja "project_stakeholders"</h3>
+                <p class="mb-3 text-gray-700">Relaciona proyectos con sus participantes (stakeholders).</p>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full border border-gray-200">
+                        <thead class="bg-blue-600 text-white">
+                            <tr>
+                                <th class="px-4 py-2 text-left">Columna</th>
+                                <th class="px-4 py-2 text-left">Descripción</th>
+                                <th class="px-4 py-2 text-left">Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">prj_stk_id</td>
+                                <td class="px-4 py-2">Identificador único de la relación</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 bg-gray-50">
+                                <td class="px-4 py-2 font-medium">project_id</td>
+                                <td class="px-4 py-2">ID del proyecto (referencia a projects)</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-4 py-2 font-medium">stakeholder_id</td>
+                                <td class="px-4 py-2">ID del participante (referencia a stakeholders)</td>
+                                <td class="px-4 py-2 font-mono">1, 2, 3...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-red-50 border-l-4 border-red-400 p-4 mt-4 rounded-r">
+                    <p class="text-red-800"><strong>Importante:</strong> Los IDs de project_id y stakeholder_id deben
+                        existir en sus respectivas hojas.</p>
+                </div>
+            </div>
+            <!-- ---------------------------------------------- -->
+            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-500 pb-2 mt-8 mb-4">Recomendaciones
+                Generales</h2>
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
+                <li><strong class="font-medium">Mantenga la integridad referencial:</strong> Los IDs referenciados deben
+                    existir en sus tablas originales.</li>
+                <li><strong class="font-medium">No modifique los IDs existentes:</strong> Solo agregue nuevos registros
+                    al final.</li>
+                <li><strong class="font-medium">Para campos opcionales</strong> (como project_keywords o
+                    project_image_path), puede dejarlos vacíos.</li>
+                <li><strong class="font-medium">Evite usar caracteres especiales</strong> que puedan causar problemas en
+                    el procesamiento.</li>
+                <li><strong class="font-medium">Guarde el archivo en formato Excel (.xlsx)</strong> antes de cargarlo al
+                    sistema.</li>
+            </ul>
+            <!-- ---------------------------------------------- -->
+            <h2 class="text-2xl font-semibold text-blue-600 border-b-2 border-blue-500 pb-2 mt-8 mb-4">Ejemplo de Flujo
+                de Trabajo</h2>
+            <ol class="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
+                <li>Agregue nuevas personas en la hoja "persons" o nuevos roles en la hoja "roles" (solo si no existen)
+                </li>
+                <li>Asigne roles a las personas en la hoja "stakeholders"</li>
+                <li>Agregue nuevos niveles de proyecto en la hoja "levels" (solo si no existen)
+                </li>
+                <li>Agregue información del proyecto en la hoja "projects" y asigne un "level" adecuado</li>
+                <li>Relacione los participantes con el proyecto en "project_stakeholders"</li>
+                <li>Revise que todas las referencias sean correctas</li>
+                <li>Guarde el archivo y cárguelo al sistema</li>
+            </ol>
+            <!-- ---------------------------------------------- -->
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mt-8 rounded-r">
+                <p class="text-blue-800">Para cualquier duda o problema con el formato, contacte al administrador del
+                    sistema.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

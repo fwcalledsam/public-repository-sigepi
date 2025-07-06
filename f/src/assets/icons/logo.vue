@@ -1,0 +1,14 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="37" height="49"
+        viewBox="0 0 37 49">
+        <image
+            xlink:href="data:image/png;base64,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"
+            x="0" y="0" width="37" height="49" />
+    </svg>
+</template>
+
+<script>
+export default {
+    name: 'LogoSVG'
+}
+</script>
