@@ -1,5 +1,7 @@
 #!/bin/bash
-# Instala gunicorn primero
-pip install gunicorn==20.1.0  # Puedes especificar una versión o dejarlo sin versión
-# Luego instala los demás requirements
-pip install -r requirements.txt
+# Instalar dependencias del sistema (como en tu Dockerfile)
+apt-get update && apt-get install -y libpq-dev gcc
+
+# Instalar dependencias de Python
+pip install --upgrade pip
+pip install --no-cache-dir -r requirements.txt gunicorn
