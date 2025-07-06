@@ -2,8 +2,12 @@
     "version": 2,
     "builds": [
         {
-            "src": "api/vercel.py",
-            "use": "@vercel/python"
+            "src": "api/vercel_handler.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9"
+            }
         },
         {
             "src": "uploads/*",
@@ -13,7 +17,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "api/vercel.py"
+            "dest": "api/vercel_handler.py"
         }
     ]
 }
